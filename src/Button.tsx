@@ -2,10 +2,11 @@ import React from "react";
 import styled, { css, CSSObject, CSSProp } from "styled-components";
 import { convertToCss } from "./utils/styleUtils";
 
-interface ButtonProps {
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "text" | "contained" | "outlined";
   children?: React.ReactNode;
-  customStyle?: CSSProp | CSSObject;
+  sx?: CSSProp | CSSObject;
 }
 
 const buttonStyles = {
@@ -65,24 +66,23 @@ const buttonStyles = {
 
 const StyledButton = styled.button<{
   variant: "text" | "contained" | "outlined";
-  customStyle?: CSSProp;
+  sx?: CSSProp;
 }>`
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   ${({ variant }) => buttonStyles[variant]}
-  ${({ customStyle }) =>
-    customStyle && convertToCss(customStyle as CSSObject)}
+  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
 `;
 
 export const Button: React.FC<ButtonProps> = ({
   variant,
   children,
-  customStyle,
+  sx,
   ...props
 }) => {
   return (
-    <StyledButton variant={variant} customStyle={customStyle} {...props}>
+    <StyledButton variant={variant} sx={sx} {...props}>
       {children}
     </StyledButton>
   );

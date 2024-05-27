@@ -36,11 +36,11 @@ var StyledButton = styled.button(templateObject_4 || (templateObject_4 = __makeT
     var variant = _a.variant;
     return buttonStyles[variant];
 }, function (_a) {
-    var customStyle = _a.customStyle;
-    return customStyle && convertToCss(customStyle);
+    var sx = _a.sx;
+    return sx && convertToCss(sx);
 });
 export var Button = function (_a) {
-    var variant = _a.variant, children = _a.children, customStyle = _a.customStyle, props = __rest(_a, ["variant", "children", "customStyle"]);
-    return (_jsx(StyledButton, __assign({ variant: variant, customStyle: customStyle }, props, { children: children })));
+    var variant = _a.variant, children = _a.children, sx = _a.sx, props = __rest(_a, ["variant", "children", "sx"]);
+    return (_jsx(StyledButton, __assign({ variant: variant, sx: sx }, props, { children: children })));
 };
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
