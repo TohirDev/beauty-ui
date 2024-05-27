@@ -79,9 +79,10 @@ export const Button: React.FC<ButtonProps> = ({
   variant,
   children,
   customStyle,
+  ...props
 }) => {
   return (
-    <StyledButton variant={variant} customStyle={customStyle}>
+    <StyledButton variant={variant} customStyle={customStyle} {...props}>
       {children}
     </StyledButton>
   );
