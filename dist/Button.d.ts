@@ -1,7 +1,7 @@
 import React from "react";
 import { CSSObject, CSSProp } from "styled-components";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant: "text" | "contained" | "outlined";
+    variant?: "link" | "default" | "outlined" | "primary" | "danger";
     children?: React.ReactNode;
     sx?: CSSProp | CSSObject;
 }
