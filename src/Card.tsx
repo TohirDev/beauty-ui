@@ -98,8 +98,7 @@ const StyledCardContent = styled.div<{
   ${({ sx }) => sx && convertToCss(sx as CSSObject)}
 `;
 const paddingStyle: CSSObject = {
-  padding: "1.5rem", // p-6
-  paddingTop: "0", // pt-0
+  padding: "1rem",
 };
 
 export const CardContent: React.FC<CardProps> = ({ sx, children }) => {
@@ -107,5 +106,26 @@ export const CardContent: React.FC<CardProps> = ({ sx, children }) => {
     <StyledCardContent sx={{ ...paddingStyle, ...(sx as CSSObject) }}>
       {children}
     </StyledCardContent>
+  );
+};
+const cardFooterStyles: CSSObject = {
+  display: "flex",
+  alignItems: "center",
+  padding: "1.5rem",
+  paddingTop: "0",
+  justifyContent: "end",
+};
+
+const StyledCardFooter = styled.div<{
+  sx?: CSSProp;
+}>`
+  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+`;
+
+export const CardFooter: React.FC<CardProps> = ({ sx, children }) => {
+  return (
+    <StyledCardFooter sx={{ ...cardFooterStyles, ...(sx as CSSObject) }}>
+      {children}
+    </StyledCardFooter>
   );
 };
