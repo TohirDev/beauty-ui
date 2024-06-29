@@ -22,7 +22,7 @@ const cardStyle: CSSProperties = {
   backgroundColor: "#fff",
   boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
   width: "fit-content",
-  padding: "10px",
+  padding: "1rem 1.5rem",
 };
 
 export const Card: React.FC<CardProps> = ({ children, sx }) => {
@@ -33,7 +33,6 @@ export const Card: React.FC<CardProps> = ({ children, sx }) => {
 const cardHeaderStyles: CSSProperties = {
   display: "flex",
   flexDirection: "column",
-  padding: "1rem",
   marginTop: "0.375rem", // 1.5 * 0.25rem = 0.375rem
 };
 
@@ -97,9 +96,7 @@ const StyledCardContent = styled.div<{
 }>`
   ${({ sx }) => sx && convertToCss(sx as CSSObject)}
 `;
-const paddingStyle: CSSObject = {
-  padding: "1rem",
-};
+const paddingStyle: CSSObject = {};
 
 export const CardContent: React.FC<CardProps> = ({ sx, children }) => {
   return (
@@ -111,8 +108,6 @@ export const CardContent: React.FC<CardProps> = ({ sx, children }) => {
 const cardFooterStyles: CSSObject = {
   display: "flex",
   alignItems: "center",
-  padding: "1.5rem",
-  paddingTop: "0",
   justifyContent: "end",
 };
 
