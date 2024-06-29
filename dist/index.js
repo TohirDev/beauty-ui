@@ -6,3 +6,4 @@ export { CardTitle } from "./Card";
 export { CardDescription } from "./Card";
 export { CardContent } from "./Card";
 export { CardFooter } from "./Card";
+export { Input } from "./Input";

@@ -1,4 +1,5 @@
 This is simple component library for react.
+For more information, visit tohirdev.uz
 
 ## Installation
 
