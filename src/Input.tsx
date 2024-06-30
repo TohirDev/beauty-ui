@@ -33,25 +33,19 @@ const StyledInput = styled.input<{ sx?: CSSProp }>`
 
 const style: CSSObject = {
   display: "flex",
-  height: "2.5rem", // 40px
+  height: "2.5rem",
   width: "100%",
-  borderRadius: "0.375rem", // medium rounded corners
-  border: "1px solid #E4E4E7", // Assuming `border-input` corresponds to a CSS variable
-  backgroundColor: "#FFFFFF", // Assuming `bg-background` corresponds to a CSS variable
-  padding: "0.5rem 0.75rem", // 8px top/bottom and 12px left/right
-  fontSize: "0.875rem", // 14px (text-sm)
-  ringOffsetColor: "#FFFFFF", // Assuming `ring-offset-background` corresponds to a CSS variable
-  "::placeholder": {
-    // Use "::placeholder" pseudo-element
+  borderRadius: "0.375rem",
+  border: "1px solid #E4E4E7",
+  backgroundColor: "#FFFFFF",
+  padding: "0.5rem 0.75rem",
+  fontSize: "0.875rem",
+  ringOffsetColor: "#FFFFFF",
+  "&::placeholder": {
     color: "#6B7280",
   },
-  ":focus-visible": {
-    // Use ":focus-visible" pseudo-class
-    outline: "none",
-    boxShadow: "0 0 0 2px #3B82F6, 0 0 0 4px #F3F4F6", // Assuming `focus-visible:ring-2` and `focus-visible:ring-ring` corresponds to CSS variables
-  },
-  ":disabled": {
-    // Use ":disabled" pseudo-class
+
+  "&:disabled": {
     cursor: "not-allowed",
     opacity: "0.5",
   },
