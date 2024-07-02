@@ -10,33 +10,43 @@ const StyledCheckbox = styled.input<{
 }>`
   ${({ sx }) => sx && convertToCss(sx as CSSObject)}
 `;
-const styles = {
-  height: "1rem", // h-4
-  width: "1rem", // w-4
-  flexShrink: 0, // shrink-0
-  borderRadius: "0.125rem", // rounded-sm
-  borderWidth: "1px", // border
-  borderColor: "#007BFF", // var(--primary)
-  outline: "none",
+
+const styles: CSSObject = {
+  appearance: "none",
+  width: "20px",
+  height: "20px",
+  backgroundColor: "white",
+  border: "1px solid black",
+  borderRadius: "3px",
   cursor: "pointer",
-  ":focus-visible": {
-    ring: "2px", // focus-visible:ring-2
-    ringColor: "#00FF00", // var(--ring)
-    ringOffsetWidth: "2px", // focus-visible:ring-offset-2
-    ringOffsetColor: "#F8F9FA", // var(--ring-offset-background)
+  position: "relative",
+  "&:checked": {
+    backgroundColor: "black",
+    borderColor: "black",
   },
-  ":disabled": {
-    cursor: "not-allowed", // disabled:cursor-not-allowed
-    opacity: 0.5, // disabled:opacity-50
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    width: "10px",
+    height: "10px",
+    backgroundColor: "white",
+    transform: "translate(-50%, -50%)",
+    opacity: 0,
+    transition: "opacity 0.2s",
   },
-  '&[data-state="checked"]': {
-    backgroundColor: "#007BFF", // var(--primary)
-    color: "#FFFFFF", // var(--primary-foreground)
-    cursor: "pointer",
+  "&:checked::after": {
+    opacity: 1,
   },
 };
+
 export const Checkbox: React.FC<ICheckboxProps> = ({ sx, ...props }) => {
   return (
-    <StyledCheckbox sx={{ ...styles, ...(sx as CSSObject) }} {...props} />
+    <StyledCheckbox
+      type="checkbox"
+      sx={{ ...styles, ...(sx as CSSObject) }}
+      {...props}
+    />
   );
 };
