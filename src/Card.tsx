@@ -1,9 +1,9 @@
 import styled, {
+  css,
   CSSObject,
   CSSProp,
   CSSProperties,
 } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 const StyledCard = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 const cardStyle: CSSProperties = {
@@ -39,7 +39,7 @@ const cardHeaderStyles: CSSProperties = {
 const SytledCardHeader = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const CardHeader: React.FC<CardProps> = ({ children, sx }) => {
@@ -52,7 +52,7 @@ export const CardHeader: React.FC<CardProps> = ({ children, sx }) => {
 const StyledCardTitle = styled.h3<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 const cardTitleStyle: CSSObject = {
   fontSize: "1.5rem",
@@ -78,7 +78,7 @@ const cardDescriptionStyles: CSSObject = {
 const StyledCardDescription = styled.p<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const CardDescription: React.FC<CardProps> = ({ sx, children }) => {
@@ -94,7 +94,7 @@ export const CardDescription: React.FC<CardProps> = ({ sx, children }) => {
 const StyledCardContent = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 const paddingStyle: CSSObject = {};
 
@@ -114,7 +114,7 @@ const cardFooterStyles: CSSObject = {
 const StyledCardFooter = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const CardFooter: React.FC<CardProps> = ({ sx, children }) => {

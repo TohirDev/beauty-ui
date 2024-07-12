@@ -1,12 +1,11 @@
 import React from "react";
 import styled, { CSSObject, CSSProp, css } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
 
 interface TypographyProps
   extends React.HTMLAttributes<HTMLHeadingElement> {
   variant: "h1" | "h2" | "h3" | "h4" | "p" | "large" | "small" | "muted";
   children: React.ReactNode;
-  sx?: CSSProp | CSSObject;
+  sx?: CSSProp;
 }
 
 const headingStyles = {
@@ -56,7 +55,7 @@ const StyledTypography = styled.div<{
   sx?: CSSProp;
 }>`
   ${({ variant }) => headingStyles[variant]}
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const Typography: React.FC<TypographyProps> = ({

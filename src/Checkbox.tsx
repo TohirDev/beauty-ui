@@ -1,5 +1,4 @@
-import styled, { CSSObject, CSSProp } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
+import styled, { css, CSSObject, CSSProp } from "styled-components";
 
 interface ICheckboxProps {
   sx?: CSSProp;
@@ -8,7 +7,7 @@ interface ICheckboxProps {
 const StyledCheckbox = styled.input<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 const styles: CSSObject = {

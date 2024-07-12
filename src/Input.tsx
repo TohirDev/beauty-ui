@@ -1,14 +1,12 @@
 import React from "react";
-import styled, { CSSObject, CSSProp } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
+import styled, { css, CSSObject, CSSProp } from "styled-components";
 
-// Extend InputProps from React.InputHTMLAttributes
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   sx?: CSSProp;
 }
 
 const StyledInput = styled.input<{ sx?: CSSProp }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 
   ${(props) =>
     props.type === "file" &&
