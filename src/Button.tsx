@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css, CSSObject, CSSProp } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -91,7 +90,7 @@ const StyledButton = styled.button<{
   font-size: 16px;
   cursor: pointer;
   ${({ variant = "default" }) => buttonStyles[variant]}
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const Button: React.FC<ButtonProps> = ({

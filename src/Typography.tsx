@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { CSSObject, CSSProp, css } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
 
 interface TypographyProps
   extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -56,7 +55,7 @@ const StyledTypography = styled.div<{
   sx?: CSSProp;
 }>`
   ${({ variant }) => headingStyles[variant]}
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const Typography: React.FC<TypographyProps> = ({

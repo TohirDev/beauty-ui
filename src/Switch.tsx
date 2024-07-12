@@ -1,5 +1,4 @@
-import styled, { CSSObject, CSSProp } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
+import styled, { css, CSSObject, CSSProp } from "styled-components";
 
 interface ISwitchProps {
   sx?: CSSProp;
@@ -34,7 +33,7 @@ const StyledSwitch = styled.input.attrs({ type: "checkbox" })<{
     transition: left 0.3s ease-in-out, background 0.3s ease-in-out;
   }
 
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const Switch: React.FC<ISwitchProps> = ({

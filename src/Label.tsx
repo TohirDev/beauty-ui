@@ -1,7 +1,4 @@
-import styled, { CSSObject, CSSProp } from "styled-components";
-import { convertToCss } from "./utils/styleUtils";
-import React from "react";
-
+import styled, { css, CSSObject, CSSProp } from "styled-components";
 interface ILabelProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   sx?: CSSProp;
   children: React.ReactNode;
@@ -10,7 +7,7 @@ interface ILabelProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 const StyledLabel = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 const styles: CSSObject = {

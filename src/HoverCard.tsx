@@ -1,6 +1,5 @@
-import styled, { CSSObject, CSSProp } from "styled-components";
+import styled, { css, CSSObject, CSSProp } from "styled-components";
 import React, { useState } from "react";
-import { convertToCss } from "./utils/styleUtils";
 
 interface IHoverCardProps {
   sx?: CSSProp;
@@ -10,13 +9,13 @@ interface IHoverCardProps {
 const StyledHoverCard = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 const StyledHoverCardTrigger = styled.div<{
   sx?: CSSProp;
 }>`
-  ${({ sx }) => sx && convertToCss(sx as CSSObject)}
+  ${({ sx }) => sx && css(sx as CSSObject)}
 `;
 
 export const HoverCard: React.FC<IHoverCardProps> = ({ sx, children }) => {
