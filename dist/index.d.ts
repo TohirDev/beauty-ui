@@ -5,3 +5,4 @@ export { Input } from "./Input";
 export { Checkbox } from "./Checkbox";
 export { Label } from "./Label";
 export { Switch } from "./Switch";
+export { Breadcrumb } from "./Breadcrumb";
