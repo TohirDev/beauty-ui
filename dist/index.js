@@ -7,3 +7,6 @@ export { Label } from "./Label";
 // export { HoverCard, HoverCardTrigger } from "./HoverCard";
 export { Switch } from "./Switch";
 export { Breadcrumb } from "./Breadcrumb";
+export var tot = function (data) {
+    console.log(data.toLowerCase());
+};
